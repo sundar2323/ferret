@@ -18,8 +18,14 @@ MongoClient.connect('mongodb://127.0.0.1:27017/test', function(err, db) {
 	var document = {name:"David", title:"About MongoDB"};
   console.log("Data to insert is of person named:" + document.name)
 	//insert record
-	db.collection('test').insert(document, function(err, records) {
+	db.collection('testcollection').insert(document, function(err, records) {
 		if (err) throw err;
-		console.log("Record added as "+records[0].id);
+		//records = db.collection('testcollection').find().pretty();
+		console.log("Record added as "+JSON.stringify(records));
+		console.log("Result is "+JSON.stringify(records.result));
+		console.log("Record id is "+records.ops[0]._id);
+		console.log("Record id inserted is "+records.insertedIds[0]);
+		//console.log("Record id is "+records.ops[0]._id);
+		
 	});
 });
