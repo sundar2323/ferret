@@ -1,0 +1,13 @@
+{
+  "name": "InsertDocument",
+  "author": "Runnable",
+  "version": "0.0.1",
+  "dependencies": {
+    "mongodb": "*"
+   },
+  "engine": "node 0.6.x",
+ 	"scripts" : { 
+  		"postinstall" : "node deleteCollection.js"
+	}	
+}
+ 
